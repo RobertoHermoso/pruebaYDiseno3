@@ -3,7 +3,12 @@ package domain;
 
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Email;
@@ -11,6 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class Actor extends DomainEntity {
 
 	private String				name;
@@ -30,6 +36,7 @@ public class Actor extends DomainEntity {
 		super();
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	@Valid
 	public List<Box> getBoxes() {
 		return this.boxes;
@@ -39,6 +46,7 @@ public class Actor extends DomainEntity {
 		this.boxes = boxes;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	@Valid
 	public List<SocialProfile> getSocialProfiles() {
 		return this.socialProfiles;
@@ -86,6 +94,7 @@ public class Actor extends DomainEntity {
 
 	@NotBlank
 	@Email
+	@Column(unique = true)
 	public String getEmail() {
 		return this.email;
 	}
@@ -94,6 +103,7 @@ public class Actor extends DomainEntity {
 		this.email = email;
 	}
 
+	@Column(unique = true)
 	@Valid
 	public String getPhoneNumber() {
 		return this.phoneNumber;

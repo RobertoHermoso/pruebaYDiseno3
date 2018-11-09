@@ -4,7 +4,12 @@ package domain;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -13,6 +18,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class EducationRecord extends DomainEntity {
 
 	private String			title;
@@ -27,6 +33,7 @@ public class EducationRecord extends DomainEntity {
 		super();
 	}
 
+	@Column(unique = true)
 	@NotBlank
 	public String getTitle() {
 		return this.title;
@@ -36,6 +43,7 @@ public class EducationRecord extends DomainEntity {
 		this.title = title;
 	}
 
+	@Temporal(TemporalType.DATE)
 	@Past
 	@NotNull
 	public Date getStartDateStudy() {
@@ -46,6 +54,7 @@ public class EducationRecord extends DomainEntity {
 		this.startDateStudy = startDateStudy;
 	}
 
+	@Temporal(TemporalType.DATE)
 	@Past
 	public Date getEndDateStudy() {
 		return this.endDateStudy;
@@ -64,6 +73,7 @@ public class EducationRecord extends DomainEntity {
 		this.institution = institution;
 	}
 
+	@Column(unique = true)
 	@URL
 	public String getUrl() {
 		return this.url;

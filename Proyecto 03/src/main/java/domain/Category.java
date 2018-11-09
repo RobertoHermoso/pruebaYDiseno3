@@ -3,12 +3,17 @@ package domain;
 
 import java.util.List;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class Category extends DomainEntity {
 
 	private List<Category>	subCategorys;
@@ -19,6 +24,7 @@ public class Category extends DomainEntity {
 		super();
 	}
 
+	@OneToMany
 	@Valid
 	public List<Category> getSubCategorys() {
 		return this.subCategorys;
@@ -28,6 +34,7 @@ public class Category extends DomainEntity {
 		this.subCategorys = subCategorys;
 	}
 
+	@Column(unique = true)
 	@NotBlank
 	public String getName() {
 		return this.name;

@@ -4,7 +4,13 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -12,9 +18,12 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class Application extends DomainEntity {
 
 	private Date				moment;
+
+	@Enumerated(EnumType.STRING)
 	private Status				status;
 	private double				offeredPrice;
 	private Collection<String>	comments;
@@ -24,6 +33,7 @@ public class Application extends DomainEntity {
 
 
 	@NotNull
+	@OneToOne(mappedBy = "fixUpTask", optional = false)
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
 	}
@@ -72,6 +82,7 @@ public class Application extends DomainEntity {
 	}
 
 	@NotNull
+	@ManyToOne(optional = false)
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}

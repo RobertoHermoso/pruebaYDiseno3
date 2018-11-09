@@ -5,12 +5,17 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class Endorsment extends DomainEntity {
 
 	private Date				moment;
@@ -19,6 +24,7 @@ public class Endorsment extends DomainEntity {
 	private Endorser			writtenTo;
 
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
 	public Date getMoment() {
