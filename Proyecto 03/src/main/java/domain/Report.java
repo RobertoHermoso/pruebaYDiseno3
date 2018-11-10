@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -30,6 +31,7 @@ public class Report extends DomainEntity {
 
 	@Valid
 	@OneToMany(cascade = CascadeType.ALL)
+	@ElementCollection(targetClass = Note.class)
 	public List<Note> getNotes() {
 		return this.notes;
 	}
@@ -59,6 +61,7 @@ public class Report extends DomainEntity {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public List<String> getAttachments() {
 		return this.attachments;
 	}

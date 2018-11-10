@@ -64,13 +64,13 @@ public class CategoryJsonExample {
 
 		final List<Category> subCategorys2 = new ArrayList<>();
 
-		subCategory.setSubCategories(subCategorys2);
-		subCategory2.setSubCategories(subCategorys2);
+		subCategory.setSubCategorys(subCategorys2);
+		subCategory2.setSubCategorys(subCategorys2);
 
 		subCategorys.add(subCategory);
 		subCategorys.add(subCategory2);
 
-		category.setSubCategories(subCategorys);
+		category.setSubCategorys(subCategorys);
 
 		return category;
 

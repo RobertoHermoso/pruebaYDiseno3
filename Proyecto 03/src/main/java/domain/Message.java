@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -17,7 +18,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Message {
+public class Message extends DomainEntity {
 
 	private Date			moment;
 	private String			subject;
@@ -70,6 +71,7 @@ public class Message {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public List<String> getTags() {
 		return this.tags;
 	}

@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -33,7 +34,7 @@ public class Application extends DomainEntity {
 
 
 	@NotNull
-	@OneToOne(mappedBy = "fixUpTask", optional = false)
+	@OneToOne(mappedBy = "application", optional = false)
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
 	}
@@ -73,6 +74,7 @@ public class Application extends DomainEntity {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public Collection<String> getComments() {
 		return this.comments;
 	}

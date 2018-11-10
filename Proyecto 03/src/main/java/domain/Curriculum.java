@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -79,7 +80,7 @@ public class Curriculum extends DomainEntity {
 		this.professionalRecords = professionalRecords;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@NotBlank
 	public PersonalRecord getPersonalRecord() {
 		return this.personalRecord;
