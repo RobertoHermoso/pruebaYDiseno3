@@ -59,4 +59,150 @@
 	
 	<!-- Other domain beans come here -->	
 	
+	
+	<!-- SPONSOR -->
+	
+	<bean id="sponsor1" class="domain.Sponsor">
+		<property name="sponsorships"> 
+			<list>
+				<ref bean="sponsorship1"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sponsor2" class="domain.Sponsor">
+		<property name="sponsorships"> 
+			<list>
+				
+				<ref bean="sponsorship2"/>
+			</list>
+		</property>
+	</bean>
+	<!-- END OF SPONSOR -->
+	
+	
+	
+	
+	<!-- SPONSORSHIP    -->
+	<bean id="sponsorship1" class="domain.Sponsorship">
+		<property name="bannerUrl" 	value="www.example.com/image1.jpg"/>
+		<property name="link" 		value="www.example.com/link1"/>
+		<property name="tutorials">
+				<ref bean="tutorial1"/>
+		</property>
+	</bean>
+	
+	<bean id="sponsorship2" class="domain.Sponsorship">
+		<property name="bannerUrl" 	value="www.example.com/image2.jpg"/>
+		<property name="link" 		value="www.example.com/link2"/>
+		<property name="tutorials">
+				<ref bean="tutorial2"/>
+		</property>
+	</bean>
+	
+	<!--  END OF SPONSORSHIP   -->
+	
+	
+	
+	
+	<!-- 	TUTORIAL    -->
+	
+	<bean id="tutorial1" class="domain.Tutorial">
+		<property name="title" 	value="Titulo1"/>
+		<property name="lastUpdate" 		value="12/12/2017"/>
+		<property name="sumary"  value="Its a tutorial1"/>
+		<property name="pictures" >
+			<list>
+				<value>www.example.com/picture1</value>
+				<value>www.example.com/picture1</value>
+			</list>
+		</property>
+		<property name="sections">
+			<list>
+				<ref bean="section1"/>
+				<ref bean="section2"/>
+			</list>
+		</property>
+	</bean>
+		
+		<bean id="tutorial2" class="domain.Tutorial">
+		<property name="title" 	value="Titulo2"/>
+		<property name="lastUpdate" 		value="12/12/2017"/>
+		<property name="sumary"  value="Its a tutorial2"/>
+		<property name="pictures" >
+			<list>
+				<value>www.example.com/picture2</value>
+				<value>www.example.com/picture2</value>
+			</list>
+		</property>
+		<property name="sections">
+			<list>
+				<ref bean="section3"/>
+				<ref bean="section4"/>
+			</list>
+		</property>
+		
+	</bean>
+	
+
+	<!--	END OF TUTORIAL    -->
+	
+	
+	
+	
+	<!--  SECTIONS    -->
+	
+	<bean id="section1" class="domain.Section">
+		<property name="sectionTitle" 	value="ExampleTitle1"/>
+		<property name="text" 		value="ExampleTest1"/>
+		<property name="sectionPictures">
+			<list>
+				<value>www.example.com/sectionPicture1</value>
+				<value>www.example.com/sectionPicture1</value>
+			</list>
+		</property>
+		<property name="number"  value="0001"/>
+	</bean>
+	
+	<bean id="section2" class="domain.Section">
+		<property name="sectionTitle" 	value="ExampleTitle2"/>
+		<property name="text" 		value="ExampleTest2"/>
+		<property name="sectionPictures">
+			<list>
+				<value>www.example.com/sectionPicture2</value>
+				<value>www.example.com/sectionPicture2</value>
+			</list>
+		</property>
+		<property name="number"  value="0002"/>
+	</bean>
+	
+	
+	<bean id="section3" class="domain.Section">
+		<property name="sectionTitle" 	value="ExampleTitle3"/>
+		<property name="text" 		value="ExampleTest3"/>
+		<property name="sectionPictures">
+			<list>
+				<value>www.example.com/sectionPicture3</value>
+				<value>www.example.com/sectionPicture3</value>
+			</list>
+		</property>
+		<property name="number"  value="0003"/>
+	</bean>
+	
+	
+	<bean id="section4" class="domain.Section">
+		<property name="sectionTitle" 	value="ExampleTitle4"/>
+		<property name="text" 		value="ExampleTest4"/>
+		<property name="sectionPictures">
+			<list>
+				<value>www.example.com/sectionPicture4</value>
+				<value>www.example.com/sectionPicture4</value>
+			</list>
+		</property>
+		<property name="number"  value="0004"/>
+	</bean>
+				
+	<!--  END OF SECTIONS    -->
+	
 </beans>
+	

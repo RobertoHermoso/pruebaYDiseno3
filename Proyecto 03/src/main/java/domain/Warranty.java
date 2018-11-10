@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.validation.Valid;
 
@@ -29,6 +30,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public List<String> getTerms() {
 		return this.terms;
 	}
@@ -38,6 +40,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public List<String> getLaws() {
 		return this.laws;
 	}

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -81,6 +82,7 @@ public class ProfessionalRecord extends DomainEntity {
 	}
 
 	@Valid
+	@ElementCollection(targetClass = String.class)
 	public List<String> getComments() {
 		return this.comments;
 	}

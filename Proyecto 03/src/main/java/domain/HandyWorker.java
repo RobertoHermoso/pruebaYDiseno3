@@ -25,7 +25,7 @@ public class HandyWorker extends Endorser {
 	private Curriculum			curriculum;
 
 
-	@OneToMany(mappedBy = "application")
+	@OneToMany(mappedBy = "handyWorker")
 	@Valid
 	public List<Application> getApplications() {
 		return this.applications;
