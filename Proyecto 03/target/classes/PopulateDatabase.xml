@@ -14,7 +14,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-	">
+		">
 	
 	<!-- User accounts -->
 
@@ -63,6 +63,14 @@
 	<!-- SPONSOR -->
 	
 	<bean id="sponsor1" class="domain.Sponsor">
+		<property name="name" value="Pepe"/>
+		<property name="middleName" value=""/>
+		<property name="surname" value="Perez"/>
+		<property name="photo" value=""/>
+		<property name="email" value="pepe@gmail.com"/>
+		<property name="phoneNumber" value="666666666"/>
+		<property name="address" value=""/>
+	
 		<property name="sponsorships"> 
 			<list>
 				<ref bean="sponsorship1"/>
@@ -71,9 +79,15 @@
 	</bean>
 	
 	<bean id="sponsor2" class="domain.Sponsor">
+		<property name="name" value="Juan"/>
+		<property name="middleName" value=""/>
+		<property name="surname" value="Rodriguez"/>
+		<property name="photo" value=""/>
+		<property name="email" value="juan@gmail.com"/>
+		<property name="phoneNumber" value="666666661"/>
+		<property name="address" value=""/>
 		<property name="sponsorships"> 
 			<list>
-				
 				<ref bean="sponsorship2"/>
 			</list>
 		</property>
@@ -85,16 +99,16 @@
 	
 	<!-- SPONSORSHIP    -->
 	<bean id="sponsorship1" class="domain.Sponsorship">
-		<property name="bannerUrl" 	value="www.example.com/image1.jpg"/>
-		<property name="link" 		value="www.example.com/link1"/>
+		<property name="bannerUrl" 	value="https://www.example.com/image1.jpg"/>
+		<property name="link" 		value="https://www.example.com/link1"/>
 		<property name="tutorials">
 				<ref bean="tutorial1"/>
 		</property>
 	</bean>
 	
 	<bean id="sponsorship2" class="domain.Sponsorship">
-		<property name="bannerUrl" 	value="www.example.com/image2.jpg"/>
-		<property name="link" 		value="www.example.com/link2"/>
+		<property name="bannerUrl" 	value="https://www.example.com/image2.jpg"/>
+		<property name="link" 		value="https://www.example.com/link2"/>
 		<property name="tutorials">
 				<ref bean="tutorial2"/>
 		</property>
@@ -109,7 +123,7 @@
 	
 	<bean id="tutorial1" class="domain.Tutorial">
 		<property name="title" 	value="Titulo1"/>
-		<property name="lastUpdate" 		value="12/12/2017"/>
+		<property name="lastUpdate" value="12/12/2017 23:59"/>
 		<property name="sumary"  value="Its a tutorial1"/>
 		<property name="pictures" >
 			<list>
