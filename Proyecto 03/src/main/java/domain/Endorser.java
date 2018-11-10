@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -16,18 +15,17 @@ import javax.validation.constraints.NotNull;
 public class Endorser extends Actor {
 
 	private Score				score;
-	private List<Endorsment>	endorsment;
+	private List<Endorsment>	endorsments;
 
 
 	@Valid
 	@OneToMany
-	@ElementCollection(targetClass = Endorsment.class)
-	public List<Endorsment> getEndorsment() {
-		return this.endorsment;
+	public List<Endorsment> getEndorsments() {
+		return this.endorsments;
 	}
 
-	public void setEndorsment(final List<Endorsment> endorsment) {
-		this.endorsment = endorsment;
+	public void setEndorsments(final List<Endorsment> endorsments) {
+		this.endorsments = endorsments;
 	}
 
 	@NotNull

@@ -7,9 +7,7 @@ import java.util.Set;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -38,7 +36,6 @@ public class Endorsment extends DomainEntity {
 	}
 
 	@Valid
-	@ElementCollection(targetClass = String.class)
 	public Collection<String> getComments() {
 		return this.comments;
 	}
@@ -47,7 +44,7 @@ public class Endorsment extends DomainEntity {
 		this.comments = comments;
 	}
 
-	@ManyToOne(optional = false)
+	@NotNull
 	public Endorser getWrittenBy() {
 		return this.writtenBy;
 	}
@@ -57,7 +54,6 @@ public class Endorsment extends DomainEntity {
 	}
 
 	@NotNull
-	@ManyToOne(optional = false)
 	public Endorser getWrittenTo() {
 		return this.writtenTo;
 	}

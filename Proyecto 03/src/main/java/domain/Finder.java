@@ -20,11 +20,11 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Finder extends DomainEntity {
+public class Finder {
 
 	private String			keyWord;
-	private String			category;
-	private String			warranty;
+	private Category		category;
+	private Warranty		warranty;
 	private double			minPrice;
 	private double			maxPrice;
 	private Date			startDate;
@@ -52,20 +52,20 @@ public class Finder extends DomainEntity {
 	}
 
 	@NotNull
-	public String getCategory() {
+	public Category getCategory() {
 		return this.category;
 	}
 
-	public void setCategory(final String category) {
+	public void setCategory(final Category category) {
 		this.category = category;
 	}
 
 	@NotNull
-	public String getWarranty() {
+	public Warranty getWarranty() {
 		return this.warranty;
 	}
 
-	public void setWarranty(final String warranty) {
+	public void setWarranty(final Warranty warranty) {
 		this.warranty = warranty;
 	}
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.validation.Valid;
 
@@ -17,7 +16,7 @@ import org.hibernate.validator.constraints.URL;
 public class MiscellaneousRecord extends DomainEntity {
 
 	private String			title;
-	private String			linkAttachement;
+	private String			linkAttachment;
 	private List<String>	comments;
 
 
@@ -34,16 +33,15 @@ public class MiscellaneousRecord extends DomainEntity {
 	}
 
 	@URL
-	public String getLinkAttachement() {
-		return this.linkAttachement;
+	public String getLinkAttachment() {
+		return this.linkAttachment;
 	}
 
-	public void setLinkAttachement(final String linkAttachement) {
-		this.linkAttachement = linkAttachement;
+	public void setLinkAttachment(final String linkAttachment) {
+		this.linkAttachment = linkAttachment;
 	}
 
 	@Valid
-	@ElementCollection(targetClass = String.class)
 	public List<String> getComments() {
 		return this.comments;
 	}

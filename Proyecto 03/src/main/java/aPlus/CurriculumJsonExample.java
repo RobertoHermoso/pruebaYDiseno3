@@ -190,14 +190,14 @@ public class CurriculumJsonExample {
 
 		miscellaneousRecord1.setComments(comments);
 		miscellaneousRecord1.setId(5);
-		miscellaneousRecord1.setLinkAttachement("http://www.linkAttachement1.com");
+		miscellaneousRecord1.setLinkAttachment("http://www.linkAttachement1.com");
 		miscellaneousRecord1.setTitle("title1");
 		miscellaneousRecord1.setVersion(3);
 		miscellaneousRecords.add(miscellaneousRecord1);
 
 		miscellaneousRecord2.setComments(comments);
 		miscellaneousRecord2.setId(6);
-		miscellaneousRecord2.setLinkAttachement("http://www.linkAttachement2.com");
+		miscellaneousRecord2.setLinkAttachment("http://www.linkAttachement2.com");
 		miscellaneousRecord2.setTitle("title2");
 		miscellaneousRecord2.setVersion(4);
 		miscellaneousRecords.add(miscellaneousRecord2);
