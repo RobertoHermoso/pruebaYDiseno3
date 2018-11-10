@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Category extends DomainEntity {
 
-	private List<Category>	subCategorys;
+	private List<Category>	subCategories;
 	private String			name;
 
 
@@ -26,12 +26,12 @@ public class Category extends DomainEntity {
 
 	@OneToMany
 	@Valid
-	public List<Category> getSubCategorys() {
-		return this.subCategorys;
+	public List<Category> getSubCategories() {
+		return this.subCategories;
 	}
 
-	public void setSubCategorys(final List<Category> subCategorys) {
-		this.subCategorys = subCategorys;
+	public void setSubCategories(final List<Category> subCategories) {
+		this.subCategories = subCategories;
 	}
 
 	@Column(unique = true)
