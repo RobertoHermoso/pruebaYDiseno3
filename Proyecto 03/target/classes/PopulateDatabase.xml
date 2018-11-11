@@ -211,7 +211,7 @@
 		</property>
 	</bean>
 	<bean id="fixUpTasks5" class="domain.FixUpTask">
-		<property name="ticker" value="784512_456987" />
+		<property name="ticker" value="781012_456987" />
 		<property name="momentPublished" value="01/03/2017 17:56" />
 		<property name="description" value="description5" />
 		<property name="address" value="address5" />
@@ -220,7 +220,7 @@
 
 		<property name="applications">
 			<list>
-				<ref bean="application8" />
+				<ref bean="application3" />
 			</list>
 		</property>
 		<property name="categories">
@@ -245,9 +245,9 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="fixUpTasks6" class="domain.FixUpTask">
-		<property name="ticker" value="657912_456987" />
+		<property name="ticker" value="651012_456987" />
 		<property name="momentPublished" value="01/03/2017 17:56" />
 		<property name="description" value="description6" />
 		<property name="address" value="address6" />
@@ -256,7 +256,7 @@
 
 		<property name="applications">
 			<list>
-				<ref bean="application9" />
+				<ref bean="application4" />
 			</list>
 		</property>
 		<property name="categories">
@@ -278,6 +278,42 @@
 		<property name="complaints">
 			<list>
 				<ref bean="complaint10" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="fixUpTasks7" class="domain.FixUpTask">
+		<property name="ticker" value="761012_456987" />
+		<property name="momentPublished" value="01/03/2017 17:56" />
+		<property name="description" value="description7" />
+		<property name="address" value="address7" />
+		<property name="maxPrice" value="703" />
+		<property name="realizationTime" value="502" />
+
+		<property name="applications">
+			<list>
+				<ref bean="application7" />
+			</list>
+		</property>
+		<property name="categories">
+			<list>
+				<ref bean="category2" />
+				<ref bean="category4" />
+			</list>
+		</property>
+		<property name="phases">
+			<list>
+				<ref bean="phase11" />
+			</list>
+		</property>
+		<property name="warranties">
+			<list>
+				<ref bean="warranty7" />
+			</list>
+		</property>
+		<property name="complaints">
+			<list>
+				<ref bean="complaint11" />
 			</list>
 		</property>
 	</bean>
@@ -379,6 +415,22 @@
 			</list>
 		</property>
 	</bean>
+
+	<bean id="warranty7" class="domain.Warranty">
+		<property name="title" value="title7" />
+		<property name="terms">
+			<list>
+				<value>term13</value>
+				<value>term14</value>
+			</list>
+		</property>
+		<property name="laws">
+			<list>
+				<value>law13</value>
+				<value>law14</value>
+			</list>
+		</property>
+	</bean>
 	<!-- END OF WARRANTY -->
 
 	<!-- CATEGORY -->
@@ -472,6 +524,34 @@
 		<property name="startMoment" value="01/01/2016 23:59" />
 		<property name="endMoment" value="01/03/2016 23:59" />
 	</bean>
+
+	<bean id="phase9" class="domain.Phase">
+		<property name="title" value="title9" />
+		<property name="description" value="description9" />
+		<property name="startMoment" value="01/01/2018 23:59" />
+		<property name="endMoment" value="01/03/2018 23:59" />
+	</bean>
+
+	<bean id="phase10" class="domain.Phase">
+		<property name="title" value="title10" />
+		<property name="description" value="description10" />
+		<property name="startMoment" value="01/02/2018 23:59" />
+		<property name="endMoment" value="01/03/2018 23:59" />
+	</bean>
+
+	<bean id="phase11" class="domain.Phase">
+		<property name="title" value="title11" />
+		<property name="description" value="description11" />
+		<property name="startMoment" value="01/01/2018 23:59" />
+		<property name="endMoment" value="01/03/2018 23:59" />
+	</bean>
+
+	<bean id="phase12" class="domain.Phase">
+		<property name="title" value="title12" />
+		<property name="description" value="description12" />
+		<property name="startMoment" value="01/02/2018 23:59" />
+		<property name="endMoment" value="01/03/2018 23:59" />
+	</bean>
 	<!-- END OF PHASE -->
 
 	<!-- COMPLAINT -->
@@ -547,7 +627,6 @@
 		<property name="attachments">
 			<list>
 				<value>attachment11</value>
-				<value>attachment12</value>
 			</list>
 		</property>
 		<property name="referee" ref="referee4" />
@@ -559,8 +638,7 @@
 		<property name="description" value="description7" />
 		<property name="attachments">
 			<list>
-				<value>attachment13</value>
-				<value>attachment14</value>
+				<value>attachment12</value>
 			</list>
 		</property>
 		<property name="referee" ref="referee4" />
@@ -572,11 +650,46 @@
 		<property name="description" value="description8" />
 		<property name="attachments">
 			<list>
-				<value>attachment15</value>
-				<value>attachment16</value>
+				<value>attachment13</value>
 			</list>
 		</property>
 		<property name="referee" ref="referee4" />
+	</bean>
+
+	<bean id="complaint9" class="domain.Complaint">
+		<property name="ticker" value="ticker9" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description9" />
+		<property name="attachments">
+			<list>
+				<value>attachment14</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee2" />
+	</bean>
+
+	<bean id="complaint10" class="domain.Complaint">
+		<property name="ticker" value="ticker10" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description10" />
+		<property name="attachments">
+			<list>
+				<value>attachment15</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee3" />
+	</bean>
+
+	<bean id="complaint11" class="domain.Complaint">
+		<property name="ticker" value="ticker11" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description11" />
+		<property name="attachments">
+			<list>
+				<value>attachment16</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee1" />
 	</bean>
 	<!-- END OF COMPLAINT -->
 
