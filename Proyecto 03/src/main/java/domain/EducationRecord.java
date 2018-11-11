@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -34,7 +33,6 @@ public class EducationRecord extends DomainEntity {
 		super();
 	}
 
-	@Column(unique = true)
 	@NotBlank
 	public String getTitle() {
 		return this.title;
@@ -74,7 +72,6 @@ public class EducationRecord extends DomainEntity {
 		this.institution = institution;
 	}
 
-	@Column(unique = true)
 	@URL
 	public String getUrl() {
 		return this.url;
