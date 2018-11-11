@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.validation.constraints.Min;
@@ -52,7 +51,6 @@ public class Section extends DomainEntity {
 
 	@Min(0)
 	@NotNull
-	@Column(unique = true)
 	public int getNumber() {
 		return this.number;
 	}

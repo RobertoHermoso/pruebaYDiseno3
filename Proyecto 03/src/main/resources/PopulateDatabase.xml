@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <!-- * PopulateDatabase.xml * * Copyright (C) 2018 Universidad de Sevilla 
 	* * The use of this project is hereby constrained to the conditions of the 
 	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
@@ -8,7 +9,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-	">
+		">
 
 	<!-- User accounts -->
 
@@ -53,8 +54,9 @@
 
 	<!-- Other domain beans come here -->
 
-	<!-- Fix-Up Task -->
-	<bean id="fixUpTask1" class="domain.FixUpTask">
+
+	<!-- FIX-UP TASK -->
+	<bean id="fixUpTasks1" class="domain.FixUpTask">
 		<property name="ticker" value="091228_123456" />
 		<property name="momentPublished" value="01/01/2015 23:59" />
 		<property name="description" value="description1" />
@@ -89,8 +91,8 @@
 		</property>
 	</bean>
 
-	<bean id="fixUpTask2" class="domain.FixUpTask">
-		<property name="ticker" value="091228_123456" />
+	<bean id="fixUpTasks2" class="domain.FixUpTask">
+		<property name="ticker" value="091228_654321" />
 		<property name="momentPublished" value="01/01/2016 23:59" />
 		<property name="description" value="description2" />
 		<property name="address" value="address2" />
@@ -123,8 +125,9 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF FIX-UP TASK -->
 
-	<!-- Warranty -->
+	<!-- WARRANTY -->
 	<bean id="warranty1" class="domain.Warranty">
 		<property name="title" value="title1" />
 		<property name="terms">
@@ -188,14 +191,11 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF WARRANTY -->
 
-	<!-- Category -->
+	<!-- CATEGORY -->
 	<bean id="category1" class="domain.Category">
 		<property name="name" value="name1" />
-		<property name="subCategories">
-			<list>
-			</list>
-		</property>
 	</bean>
 
 	<bean id="category2" class="domain.Category">
@@ -211,7 +211,6 @@
 		<property name="name" value="name3" />
 		<property name="subCategories">
 			<list>
-				<ref bean="category1" />
 				<ref bean="category2" />
 			</list>
 
@@ -222,14 +221,14 @@
 		<property name="name" value="name4" />
 		<property name="subCategories">
 			<list>
-				<ref bean="category1" />
-				<ref bean="category2" />
 				<ref bean="category3" />
 			</list>
 		</property>
 	</bean>
-
-	<!-- Phase -->
+	<!--  END OF CATEGORY -->
+	
+	
+	<!-- PHASE -->
 	<bean id="phase1" class="domain.Phase">
 		<property name="title" value="title1" />
 		<property name="description" value="description1" />
@@ -257,9 +256,9 @@
 		<property name="startMoment" value="01/01/2009 23:59" />
 		<property name="endMoment" value="01/03/2010 23:59" />
 	</bean>
+	<!--  END OF PHASE -->
 
-	<!-- Complaint -->
-
+	<!-- COMPLAINT -->
 	<bean id="complaint1" class="domain.Complaint">
 		<property name="ticker" value="ticker1" />
 		<property name="moment" value="11/09/2009 23:59" />
@@ -270,11 +269,9 @@
 				<value>attachment2</value>
 			</list>
 		</property>
-
 		<property name="referee" ref="referee1" />
-
 	</bean>
-
+	
 	<bean id="complaint2" class="domain.Complaint">
 		<property name="ticker" value="ticker2" />
 		<property name="moment" value="11/09/2010 23:59" />
@@ -285,9 +282,7 @@
 				<value>attachment4</value>
 			</list>
 		</property>
-
 		<property name="referee" ref="referee2" />
-
 	</bean>
 
 	<bean id="complaint3" class="domain.Complaint">
@@ -300,9 +295,7 @@
 				<value>attachment6</value>
 			</list>
 		</property>
-
 		<property name="referee" ref="referee3" />
-
 	</bean>
 
 	<bean id="complaint4" class="domain.Complaint">
@@ -315,30 +308,29 @@
 				<value>attachment8</value>
 			</list>
 		</property>
-
 		<property name="referee" ref="referee4" />
-
 	</bean>
+	<!-- END OF COMPLAINT -->
 
-	<!-- Finder -->
+	<!-- FINDER -->
 	<bean id="finder1" class="domain.Finder">
 		<property name="keyWord" value="keyWord1" />
-		<property name="category" value="category1" />
-		<property name="warranty" value="warranty1" />
+		<property name="category" value="categoryFinder1" />
+		<property name="warranty" value="warrantyFinder1" />
 		<property name="minPrice" value="0.0" />
 		<property name="maxPrice" value="1.0" />
 		<property name="startDate" value="02/01/2018 11:30" />
 		<property name="endDate" value="02/01/2018 11:45" />
 		<property name="fixUpTasks">
 			<list>
-				<ref bean="fixUpTask1" />
-				<ref bean="fixUpTask2" />
+				<ref bean="fixUpTasks1" />
+				<ref bean="fixUpTasks2" />
 			</list>
 		</property>
 	</bean>
+	<!-- END OF FINDER -->
 
-
-	<!-- Application -->
+	<!-- APPLICATION -->
 	<bean id="application1" class="domain.Application">
 		<property name="moment" value="03/03/2018 11:30" />
 		<property name="status" value="PENDING" />
@@ -349,21 +341,26 @@
 				<value>comment2"</value>
 			</list>
 		</property>
-		<property name="fixUpTasks">
-			<list>
-				<ref bean="fixUpTask1" />
-				<ref bean="fixUpTask2" />
-			</list>
-		</property>
-		<property name="handyWorker">
-			<list>
-				<ref bean="handyWorker1" />
-			</list>
-		</property>
+		<property name="fixUpTask" ref ="fixUpTasks1" />
+		<property name="handyWorker" ref="handyWorker1"/>
 	</bean>
+	
+	<bean id="application2" class="domain.Application">
+    	<property name="moment" value="03/09/2018 11:30" />
+    	<property name="status" value="ACCEPTED" />
+    	<property name="offeredPrice" value="4.8" />
+    	<property name="comments">
+      		<list>
+        		<value>comment3</value>
+        		<value>comment4"</value>
+      		</list>
+    	</property>
+    	<property name="fixUpTask" ref ="fixUpTasks2" />
+    	<property name="handyWorker" ref ="handyWorker1" />
+  </bean>
+	<!-- END OF APPLICATION -->
 
-
-	<!-- Report -->
+	<!-- REPORT -->
 	<bean id="report1" class="domain.Report">
 		<property name="moment" value="03/04/2018 11:30" />
 		<property name="description" value="description1" />
@@ -428,8 +425,9 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF REPORT -->
 
-	<!-- Note -->
+	<!-- NOTE -->
 	<bean id="note1" class="domain.Note">
 		<property name="moment" value="03/05/2018 11:30" />
 		<property name="mandatoryComment" value="mandatoryComment1" />
@@ -474,9 +472,17 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF NOTE -->
 
-	<!-- Referee -->
+	<!-- REFEREE -->
 	<bean id="referee1" class="domain.Referee">
+		<property name="name" value="Arbitraso" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Gilo" />
+		<property name="photo" value="https://www.url.com/example" />
+		<property name="email" value="arbitraso.univ@gmail.com" />
+		<property name="phoneNumber" value="+34609235521" />
+		<property name="address" value="Almendralejo" />
 		<property name="reports">
 			<list>
 				<ref bean="report1" />
@@ -485,6 +491,14 @@
 
 	</bean>
 	<bean id="referee2" class="domain.Referee">
+		
+		<property name="name" value="refeero" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Gilo" />
+		<property name="photo" value="https://www.url.com/example" />
+		<property name="email" value="referoo.univ@gmail.com" />
+		<property name="phoneNumber" value="+34609235545" />
+		<property name="address" value="Almendralejo" />
 		<property name="reports">
 			<list>
 				<ref bean="report2" />
@@ -493,6 +507,13 @@
 
 	</bean>
 	<bean id="referee3" class="domain.Referee">
+		<property name="name" value="refeero2314" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Gilo" />
+		<property name="photo" value="https://www.url.com/example" />
+		<property name="email" value="referoo123.univ@gmail.com" />
+		<property name="phoneNumber" value="+34609225545" />
+		<property name="address" value="Almendralejo" />
 		<property name="reports">
 			<list>
 				<ref bean="report3" />
@@ -501,18 +522,27 @@
 
 	</bean>
 	<bean id="referee4" class="domain.Referee">
+		<property name="name" value="refe12ero" />
+		<property name="middleName" value="" />
+		<property name="surname" value="Gildo" />
+		<property name="photo" value="https://www.url.com/example" />
+		<property name="email" value="refweroo.univ@gmail.com" />
+		<property name="phoneNumber" value="+34619235545" />
+		<property name="address" value="Almendralejo" />
 		<property name="reports">
 			<list>
 				<ref bean="report4" />
 			</list>
 		</property>
 	</bean>
+	<!-- END OF REFEREE -->
 
+	<!-- ADMIN -->
 	<bean id="admin1" class="domain.Admin">
 		<property name="name" value="David" />
 		<property name="middleName" value="" />
 		<property name="surname" value="Gil" />
-		<property name="photo" value="www.url.com/example" />
+		<property name="photo" value="https://www.url.com/example" />
 		<property name="email" value="davidgil.univ@gmail.com" />
 		<property name="phoneNumber" value="+34609235520" />
 		<property name="address" value="Almendralejo" />
@@ -527,12 +557,14 @@
 			</list>
 		</property>
 	</bean>
+	<!--  ADMIN -->
 
+	<!--  HANDY WORKER -->
 	<bean id="handyWorker1" class="domain.HandyWorker">
 		<property name="name" value="Pepe" />
 		<property name="middleName" value="Luis" />
 		<property name="surname" value="Martinez" />
-		<property name="photo" value="www.url.com/example2" />
+		<property name="photo" value="https://www.url.com/example2" />
 		<property name="email" value="pepe.luis@gmail.com" />
 		<property name="phoneNumber" value="+34600256914" />
 		<property name="address" value="Sevilla" />
@@ -568,9 +600,11 @@
 				<ref bean="tutorial1" />
 			</list>
 		</property>
-		<property name="curriculum" ref="curriulum1" />
+		<property name="curriculum" ref="curriculum1" />
 	</bean>
+	<!--  END OF HANDY WORKER -->
 
+	<!-- ENDORSMENT  -->
 	<bean id="endorsment1" class="domain.Endorsment">
 		<property name="moment" value="09/11/2018 12:30" />
 		<property name="comments">
@@ -582,13 +616,54 @@
 		<property name="writtenBy" ref="customer1" />
 		<property name="writtenTo" ref="handyWorker1" />
 	</bean>
+	
+	<bean id="endorsment2" class="domain.Endorsment">
+		<property name="moment" value="09/08/2018 12:30" />
+		<property name="comments">
+			<list>
+				<value>Example of comment</value>
+			</list>
+		</property>
+		<property name="writtenBy" ref="customer1" />
+		<property name="writtenTo" ref="handyWorker1" />
+	</bean>
+	<!-- END OF ENDORSMENT  -->
 
+	<!--  CURRICULUM -->
+	<bean id="curriculum1" class="domain.Curriculum">
+		<property name="ticker" value="ticker_example"/>
+		<property name="endorserRecords">
+			<list>
+				<ref bean="endorserRecord1"/>
+			</list>
+		</property>
+		<property name="miscellaneousRecords">
+			<list>
+				<ref bean="miscellaneousRecord1"/>
+			</list>
+		</property>
+		<property name="educationRecords">
+			<list>
+				<ref bean="educationRecord1"/>
+			</list>
+		</property>
+		<property name="professionalRecords">
+			<list>
+				<ref bean="professionalRecord1"/>
+			</list>
+		</property>
+		<property name="personalRecord" ref="personalRecord1"/>
+	</bean>
+	
+	<!--  END OF CURRICULUM -->
+
+	<!-- EDUCATIONAL RECORD  -->
 	<bean id="educationRecord1" class="domain.EducationRecord">
 		<property name="title" value="Title of record" />
 		<property name="startDateStudy" value="09/11/2018 12:30" />
 		<property name="endDateStudy" value="09/11/2018 13:30" />
 		<property name="institution" value="Name of institution" />
-		<property name="url" value="www.url.com/example3" />
+		<property name="url" value="https://www.url.com/example3" />
 		<property name="comments">
 			<list>
 				<value>Example of comment</value>
@@ -596,12 +671,14 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF EDUCATIONAL RECORD  -->
 
+	<!-- CUSTOMER  -->
 	<bean id="customer1" class="domain.Customer">
 		<property name="name" value="Paco" />
 		<property name="middleName" value="Manuel" />
 		<property name="surname" value="Candela" />
-		<property name="photo" value="www.url2.com/example" />
+		<property name="photo" value="https://www.url2.com/example" />
 		<property name="email" value="paco.univ@gmail.com" />
 		<property name="phoneNumber" value="+34746985321" />
 		<property name="address" value="Reina Mercedes" />
@@ -618,7 +695,7 @@
 		<property name="score" value="FANTASTIC" />
 		<property name="endorsments">
 			<list>
-				<ref bean="endorsments1" />
+				<ref bean="endorsment1" />
 			</list>
 		</property>
 		<property name="fixUpTasks">
@@ -627,52 +704,63 @@
 			</list>
 		</property>
 	</bean>
+	<!-- END OF CUSTOMER  -->
 
+	<!-- ENDORSER RECORD -->
 	<bean id="endorserRecord1" class="domain.EndorserRecord">
 		<property name="fullName" value="Endorser" />
-		<property name="email" value="email@gmail.com" />
+		<property name="email" value="emailoJuanca@gmail.com" />
 		<property name="phoneNumber" value="+34748125963" />
-		<property name="linkLinkedInProfile" value="www.linkedin.com" />
+		<property name="linkLinkedInProfile" value="https://www.linkedin.com" />
 		<property name="comments">
 			<list>
 				<value>Example of comment</value>
 			</list>
 		</property>
 	</bean>
+	<!-- END OF ENDORSER RECORD -->
 
+
+	<!-- MISCELLANEOUS RECORD -->
 	<bean id="miscellaneousRecord1" class="domain.MiscellaneousRecord">
-		<property name="tittle" value="Miscellaneous" />
-		<property name="linkAttachment" value="www.attachment.com" />
+		<property name="title" value="Miscellaneous" />
+		<property name="linkAttachment" value="https://www.attachment.com" />
 		<property name="comments">
 			<list>
 				<value>Example of comment</value>
 			</list>
 		</property>
 	</bean>
+	<!-- END OF MISCELLANEOUS RECORD -->
 
+
+	<!-- PROFESIONAL RECORD -->
 	<bean id="professionalRecord1" class="domain.ProfessionalRecord">
 		<property name="nameCompany" value="Proffesional S.L." />
 		<property name="startDate" value="11/09/2009 23:59" />
 		<property name="endDate" value="11/09/2013 23:59" />
 		<property name="role" value="Admin" />
-		<property name="linkAttachment" value="www.attachment.com" />
+		<property name="linkAttachment" value="https://www.attachment.com" />
 		<property name="comments">
 			<list>
 				<value>Example of comment</value>
 			</list>
 		</property>
 	</bean>
+	<!-- END OF PROFESIONAL RECORD -->
 
+
+	<!-- PERSONAL RECORD -->
 	<bean id="personalRecord1" class="domain.PersonalRecord">
 		<property name="fullName" value="Personal" />
-		<property name="photo" value="www.photo.com" />
+		<property name="photo" value="https://www.photo.com" />
 		<property name="email" value="email@gmail.com" />
-		<property name="phoneNumber" value="+34748125963" />
-		<property name="urlLinkedInProfile" value="www.linkedin.com" />
+		<property name="phoneNumber" value="+34710125963" />
+		<property name="urlLinkedInProfile" value="https://www.linkedin.com" />
 	</bean>
+	<!-- END OF PERSONAL RECORD -->
 
 	<!-- SPONSOR -->
-
 	<bean id="sponsor1" class="domain.Sponsor">
 		<property name="name" value="Pepe" />
 		<property name="middleName" value="" />
@@ -706,8 +794,6 @@
 	<!-- END OF SPONSOR -->
 
 
-
-
 	<!-- SPONSORSHIP -->
 	<bean id="sponsorship1" class="domain.Sponsorship">
 		<property name="bannerUrl" value="https://www.example.com/image1.jpg" />
@@ -724,14 +810,10 @@
 			<ref bean="tutorial2" />
 		</property>
 	</bean>
-
 	<!-- END OF SPONSORSHIP -->
 
 
-
-
 	<!-- TUTORIAL -->
-
 	<bean id="tutorial1" class="domain.Tutorial">
 		<property name="title" value="Titulo1" />
 		<property name="lastUpdate" value="12/12/2017 23:59" />
@@ -766,17 +848,11 @@
 				<ref bean="section4" />
 			</list>
 		</property>
-
 	</bean>
-
-
 	<!-- END OF TUTORIAL -->
 
 
-
-
-	<!-- SECTIONS -->
-
+	<!-- SECTION -->
 	<bean id="section1" class="domain.Section">
 		<property name="sectionTitle" value="ExampleTitle1" />
 		<property name="text" value="ExampleTest1" />
@@ -801,7 +877,6 @@
 		<property name="number" value="0002" />
 	</bean>
 
-
 	<bean id="section3" class="domain.Section">
 		<property name="sectionTitle" value="ExampleTitle3" />
 		<property name="text" value="ExampleTest3" />
@@ -814,7 +889,6 @@
 		<property name="number" value="0003" />
 	</bean>
 
-
 	<bean id="section4" class="domain.Section">
 		<property name="sectionTitle" value="ExampleTitle4" />
 		<property name="text" value="ExampleTest4" />
@@ -826,391 +900,191 @@
 		</property>
 		<property name="number" value="0004" />
 	</bean>
+	<!-- END OF SECTION -->
 
 	<!-- BOX -->
-
-	<bean class="domain.Box" id="boxSent">
-
+	<bean class="domain.Box" id="box1">
 		<property value="Sent messages" name="name" />
-
 		<property value="true" name="isSystem" />
-
 		<property name="messages">
-
 			<list>
 			</list>
-
 		</property>
-
 	</bean>
-
-
-
-	<bean class="domain.Box" id="boxRecieved">
-
+	<bean class="domain.Box" id="box2">
 		<property value="Received messages" name="name" />
-
 		<property value="true" name="isSystem" />
-
-
-
 		<property name="messages">
-
 			<list>
 			</list>
-
 		</property>
-
 	</bean>
 
-
-
-	<bean class="domain.Box" id="boxTrash">
-
+	<bean class="domain.Box" id="box3">
 		<property value="Trash" name="name" />
-
 		<property value="true" name="isSystem" />
-
 		<property name="messages">
-
 			<list>
 			</list>
-
 		</property>
-
 	</bean>
-
-
-
-	<bean class="domain.Box" id="boxSpam">
-
+	<bean class="domain.Box" id="box4">
 		<property value="Spam" name="name" />
-
 		<property value="true" name="isSystem" />
-
 		<property name="messages">
-
 			<list>
 			</list>
-
 		</property>
-
 	</bean>
-
 	<!-- END OF BOX -->
 
 
 	<!-- MESSAGE -->
-
-
-
-
 	<bean class="domain.Message" id="message1">
-
 		<property value="11/11/2011 11:11" name="moment" />
-
 		<property value="This is a sent message by HandyWorker1"
 			name="subject" />
-
 		<property value="HandyWorkers rock." name="body" />
-
 		<property value="LOW" name="priority" />
-
 		<property name="tags">
-
 			<list>
-
 				<value>Tag de ejemplo 1</value>
-
 				<value>Tag de ejemplo 2</value>
-
 			</list>
-
 		</property>
-
-
-
 		<property name="sender">
-
 			<ref bean="handyWorker1" />
-
 		</property>
-
-
-
 		<property name="receivers">
-
 			<list>
-
 				<ref bean="admin1" />
-
 				<ref bean="customer1" />
-
 			</list>
-
 		</property>
-
 	</bean>
 
 
 
 	<bean class="domain.Message" id="message2">
-
 		<property value="11/12/2011 11:11" name="moment" />
-
 		<property value="This is a sent message by Customer1" name="subject" />
-
 		<property value="Customers rule." name="body" />
-
 		<property value="NEUTRAL" name="priority" />
-
-
-
 		<property name="tags">
-
-
 			<list>
-
 				<value>Tag de ejemplo 3</value>
-
 				<value>Tag de ejemplo 4</value>
-
 			</list>
-
 		</property>
-
-
-
 		<property name="sender">
-
 			<ref bean="customer1" />
-
 		</property>
-
-
-
 		<property name="receivers">
-
-
-
 			<list>
-
 				<ref bean="admin1" />
-
 				<ref bean="handyWorker1" />
-
 			</list>
-
 		</property>
-
 	</bean>
-
-
-
+	
 	<bean class="domain.Message" id="message3">
-
 		<property value="12/11/2011 11:11" name="moment" />
-
 		<property value="This is a sent message by Admin1" name="subject" />
-
 		<property value="Would you please stop sending this stupid messages?"
 			name="body" />
-
 		<property value="HIGH" name="priority" />
-
-
-
 		<property name="tags">
-
-
-
 			<list>
-
 				<value>Tag de ejemplo 5</value>
-
 				<value>Tag de ejemplo 6</value>
-
 			</list>
-
 		</property>
-
-
-
 		<property name="sender">
-
 			<ref bean="admin1" />
-
 		</property>
-
-
-
 		<property name="receivers">
-
-
-
 			<list>
-
 				<ref bean="customer1" />
-
 				<ref bean="handyWorker1" />
-
 			</list>
-
 		</property>
-
 	</bean>
-
-
 
 	<bean class="domain.Message" id="message4">
-
 		<property value="02/09/2013 11:11" name="moment" />
-
 		<property value="This is a Spam message" name="subject" />
-
 		<property
-			value="Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana Banana "
+			value="Banana Banana Banana Banana "
 			name="body" />
-
 		<property value="LOW" name="priority" />
-
-
-
 		<property name="tags">
-
-
-
 			<list>
-
 				<value>Banana de ejemplo 7</value>
-
 				<value>Banana de ejemplo 8</value>
-
 			</list>
-
 		</property>
-
-
-
 		<property name="sender">
-
 			<ref bean="referee1" />
-
 		</property>
-
-
-
 		<property name="receivers">
-
-
-
 			<list>
-
 				<ref bean="admin1" />
-
 				<ref bean="handyWorker1" />
-
 			</list>
-
 		</property>
-
 	</bean>
-
-
+	
 	<bean class="domain.Message" id="message5">
-
 		<property value="07/05/2018 11:11" name="moment" />
-
 		<property value="This is a disposable message" name="subject" />
-
 		<property value="My willing to live." name="body" />
-
 		<property value="LOW" name="priority" />
-
-
 		<property name="tags">
-
-
-
 			<list>
-
 				<value>Are this really necessary?</value>
-
 				<value>DP is okay... I guess...</value>
-
 			</list>
-
 		</property>
-
-
 		<property name="sender">
-
 			<ref bean="handyWorker1" />
-
 		</property>
-
-
 		<property name="receivers">
 			<list>
-
 				<ref bean="referee1" />
-
 				<ref bean="admin1" />
-
 			</list>
-
 		</property>
-
 	</bean>
-
 	<!-- END OF MESSAGE -->
 
 
 	<!-- SOCIALPROFILE -->
-
-
-	<bean class="domain.SocialProfile" id="socialProfileAdmin1">
-
+	<bean class="domain.SocialProfile" id="socialProfile1">
 		<property value="Administrador1" name="nick" />
-
 		<property value="Paco" name="name" />
-
 		<property value="https://www.example.com/link1" name="profileLink" />
-
 	</bean>
 
-	<bean class="domain.SocialProfile" id="socialProfileCustomer1">
-
+	<bean class="domain.SocialProfile" id="socialProfile2">
 		<property value="Customer1" name="nick" />
-
 		<property value="Pepe" name="name" />
-
 		<property value="https://www.example.com/link2" name="profileLink" />
-
 	</bean>
 
-	<bean class="domain.SocialProfile" id="socialProfileReferee1">
-
+	<bean class="domain.SocialProfile" id="socialProfile3">
 		<property value="Referee1" name="nick" />
-
 		<property value="Walabonso" name="name" />
-
 		<property value="https://www.example.com/link3" name="profileLink" />
-
 	</bean>
 
-
-	<bean class="domain.SocialProfile" id="socialProfileHandyWorker1">
-
+	<bean class="domain.SocialProfile" id="socialProfile4">
 		<property value="HandyWorker1" name="nick" />
-
 		<property value="Eustaquio" name="name" />
-
 		<property value="https://www.example.com/link4" name="profileLink" />
-
 	</bean>
-
 	<!-- END OF SOCIALPROFILE -->
-	<!-- END OF SECTIONS -->
+
 
 </beans>
+
+
