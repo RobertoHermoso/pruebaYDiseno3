@@ -8,6 +8,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -102,12 +103,12 @@ public class FixUpTask extends DomainEntity {
 		return this.applications;
 	}
 
-	public void setApplication(final Collection<Application> applications) {
+	public void setApplications(final Collection<Application> applications) {
 		this.applications = applications;
 	}
 
 	@NotNull
-	@OneToMany
+	@ManyToMany
 	public Collection<Category> getCategories() {
 		return this.categories;
 	}

@@ -64,11 +64,15 @@
 		<property name="maxPrice" value="150" />
 		<property name="realizationTime" value="10" />
 
-		<property name="application" ref="application1" />
+		<property name="applications">
+			<list>
+				<ref bean="application1" />
+			</list>
+		</property>
 		<property name="categories">
 			<list>
 				<ref bean="category1" />
-				<ref bean="category2" />
+				<ref bean="category4" />
 			</list>
 		</property>
 		<property name="phases">
@@ -80,7 +84,6 @@
 		<property name="warranties">
 			<list>
 				<ref bean="warranty1" />
-				<ref bean="warranty2" />
 			</list>
 		</property>
 		<property name="complaints">
@@ -99,11 +102,15 @@
 		<property name="maxPrice" value="270" />
 		<property name="realizationTime" value="105" />
 
-		<property name="application" ref="application2" />
+		<property name="applications">
+			<list>
+				<ref bean="application2" />
+			</list>
+		</property>
 		<property name="categories">
 			<list>
-				<ref bean="category3" />
-				<ref bean="category4" />
+				<ref bean="category1" />
+				<ref bean="category2" />
 			</list>
 		</property>
 		<property name="phases">
@@ -114,14 +121,163 @@
 		</property>
 		<property name="warranties">
 			<list>
-				<ref bean="warranty3" />
-				<ref bean="warranty4" />
+				<ref bean="warranty2" />
 			</list>
 		</property>
 		<property name="complaints">
 			<list>
 				<ref bean="complaint3" />
 				<ref bean="complaint4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="fixUpTasks3" class="domain.FixUpTask">
+		<property name="ticker" value="091228_789321" />
+		<property name="momentPublished" value="01/01/2017 17:56" />
+		<property name="description" value="description3" />
+		<property name="address" value="address3" />
+		<property name="maxPrice" value="20" />
+		<property name="realizationTime" value="205" />
+
+		<property name="applications">
+			<list>
+				<ref bean="application3" />
+				<ref bean="application4" />
+			</list>
+		</property>
+		<property name="categories">
+			<list>
+				<ref bean="category4" />
+				<ref bean="category2" />
+			</list>
+		</property>
+		<property name="phases">
+			<list>
+				<ref bean="phase5" />
+				<ref bean="phase6" />
+			</list>
+		</property>
+		<property name="warranties">
+			<list>
+				<ref bean="warranty3" />
+			</list>
+		</property>
+		<property name="complaints">
+			<list>
+				<ref bean="complaint5" />
+				<ref bean="complaint6" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="fixUpTasks4" class="domain.FixUpTask">
+		<property name="ticker" value="091228_456987" />
+		<property name="momentPublished" value="01/03/2017 17:56" />
+		<property name="description" value="description4" />
+		<property name="address" value="address4" />
+		<property name="maxPrice" value="531" />
+		<property name="realizationTime" value="502" />
+
+		<property name="applications">
+			<list>
+				<ref bean="application5" />
+				<ref bean="application6" />
+				<ref bean="application7" />
+			</list>
+		</property>
+		<property name="categories">
+			<list>
+				<ref bean="category1" />
+				<ref bean="category3" />
+			</list>
+		</property>
+		<property name="phases">
+			<list>
+				<ref bean="phase7" />
+				<ref bean="phase8" />
+			</list>
+		</property>
+		<property name="warranties">
+			<list>
+				<ref bean="warranty4" />
+			</list>
+		</property>
+		<property name="complaints">
+			<list>
+				<ref bean="complaint7" />
+				<ref bean="complaint8" />
+			</list>
+		</property>
+	</bean>
+	<bean id="fixUpTasks5" class="domain.FixUpTask">
+		<property name="ticker" value="784512_456987" />
+		<property name="momentPublished" value="01/03/2017 17:56" />
+		<property name="description" value="description5" />
+		<property name="address" value="address5" />
+		<property name="maxPrice" value="331" />
+		<property name="realizationTime" value="520" />
+
+		<property name="applications">
+			<list>
+				<ref bean="application8" />
+			</list>
+		</property>
+		<property name="categories">
+			<list>
+				<ref bean="category1" />
+				<ref bean="category3" />
+			</list>
+		</property>
+		<property name="phases">
+			<list>
+				<ref bean="phase9" />
+			</list>
+		</property>
+		<property name="warranties">
+			<list>
+				<ref bean="warranty5" />
+			</list>
+		</property>
+		<property name="complaints">
+			<list>
+				<ref bean="complaint9" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="fixUpTasks6" class="domain.FixUpTask">
+		<property name="ticker" value="657912_456987" />
+		<property name="momentPublished" value="01/03/2017 17:56" />
+		<property name="description" value="description6" />
+		<property name="address" value="address6" />
+		<property name="maxPrice" value="103" />
+		<property name="realizationTime" value="502" />
+
+		<property name="applications">
+			<list>
+				<ref bean="application9" />
+			</list>
+		</property>
+		<property name="categories">
+			<list>
+				<ref bean="category2" />
+				<ref bean="category4" />
+			</list>
+		</property>
+		<property name="phases">
+			<list>
+				<ref bean="phase10" />
+			</list>
+		</property>
+		<property name="warranties">
+			<list>
+				<ref bean="warranty6" />
+			</list>
+		</property>
+		<property name="complaints">
+			<list>
+				<ref bean="complaint10" />
 			</list>
 		</property>
 	</bean>
@@ -191,6 +347,38 @@
 			</list>
 		</property>
 	</bean>
+
+	<bean id="warranty5" class="domain.Warranty">
+		<property name="title" value="title5" />
+		<property name="terms">
+			<list>
+				<value>term9</value>
+				<value>term10</value>
+			</list>
+		</property>
+		<property name="laws">
+			<list>
+				<value>law9</value>
+				<value>law10</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="warranty6" class="domain.Warranty">
+		<property name="title" value="title6" />
+		<property name="terms">
+			<list>
+				<value>term11</value>
+				<value>term12</value>
+			</list>
+		</property>
+		<property name="laws">
+			<list>
+				<value>law11</value>
+				<value>law12</value>
+			</list>
+		</property>
+	</bean>
 	<!-- END OF WARRANTY -->
 
 	<!-- CATEGORY -->
@@ -225,9 +413,9 @@
 			</list>
 		</property>
 	</bean>
-	<!--  END OF CATEGORY -->
-	
-	
+	<!-- END OF CATEGORY -->
+
+
 	<!-- PHASE -->
 	<bean id="phase1" class="domain.Phase">
 		<property name="title" value="title1" />
@@ -256,7 +444,35 @@
 		<property name="startMoment" value="01/01/2009 23:59" />
 		<property name="endMoment" value="01/03/2010 23:59" />
 	</bean>
-	<!--  END OF PHASE -->
+
+	<bean id="phase5" class="domain.Phase">
+		<property name="title" value="title5" />
+		<property name="description" value="description5" />
+		<property name="startMoment" value="01/01/2016 23:59" />
+		<property name="endMoment" value="01/03/2016 23:59" />
+	</bean>
+
+	<bean id="phase6" class="domain.Phase">
+		<property name="title" value="title6" />
+		<property name="description" value="description6" />
+		<property name="startMoment" value="01/01/2016 23:59" />
+		<property name="endMoment" value="01/03/2016 23:59" />
+	</bean>
+
+	<bean id="phase7" class="domain.Phase">
+		<property name="title" value="title7" />
+		<property name="description" value="description7" />
+		<property name="startMoment" value="01/01/2016 23:59" />
+		<property name="endMoment" value="01/03/2016 23:59" />
+	</bean>
+
+	<bean id="phase8" class="domain.Phase">
+		<property name="title" value="title8" />
+		<property name="description" value="description8" />
+		<property name="startMoment" value="01/01/2016 23:59" />
+		<property name="endMoment" value="01/03/2016 23:59" />
+	</bean>
+	<!-- END OF PHASE -->
 
 	<!-- COMPLAINT -->
 	<bean id="complaint1" class="domain.Complaint">
@@ -271,7 +487,7 @@
 		</property>
 		<property name="referee" ref="referee1" />
 	</bean>
-	
+
 	<bean id="complaint2" class="domain.Complaint">
 		<property name="ticker" value="ticker2" />
 		<property name="moment" value="11/09/2010 23:59" />
@@ -310,6 +526,58 @@
 		</property>
 		<property name="referee" ref="referee4" />
 	</bean>
+
+	<bean id="complaint5" class="domain.Complaint">
+		<property name="ticker" value="ticker5" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description5" />
+		<property name="attachments">
+			<list>
+				<value>attachment9</value>
+				<value>attachment10</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee4" />
+	</bean>
+
+	<bean id="complaint6" class="domain.Complaint">
+		<property name="ticker" value="ticker6" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description6" />
+		<property name="attachments">
+			<list>
+				<value>attachment11</value>
+				<value>attachment12</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee4" />
+	</bean>
+
+	<bean id="complaint7" class="domain.Complaint">
+		<property name="ticker" value="ticker7" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description7" />
+		<property name="attachments">
+			<list>
+				<value>attachment13</value>
+				<value>attachment14</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee4" />
+	</bean>
+
+	<bean id="complaint8" class="domain.Complaint">
+		<property name="ticker" value="ticker8" />
+		<property name="moment" value="11/09/2008 23:59" />
+		<property name="description" value="description8" />
+		<property name="attachments">
+			<list>
+				<value>attachment15</value>
+				<value>attachment16</value>
+			</list>
+		</property>
+		<property name="referee" ref="referee4" />
+	</bean>
 	<!-- END OF COMPLAINT -->
 
 	<!-- FINDER -->
@@ -341,23 +609,93 @@
 				<value>comment2"</value>
 			</list>
 		</property>
-		<property name="fixUpTask" ref ="fixUpTasks1" />
-		<property name="handyWorker" ref="handyWorker1"/>
+		<property name="fixUpTask" ref="fixUpTasks1" />
+		<property name="handyWorker" ref="handyWorker1" />
 	</bean>
-	
+
 	<bean id="application2" class="domain.Application">
-    	<property name="moment" value="03/09/2018 11:30" />
-    	<property name="status" value="ACCEPTED" />
-    	<property name="offeredPrice" value="4.8" />
-    	<property name="comments">
-      		<list>
-        		<value>comment3</value>
-        		<value>comment4"</value>
-      		</list>
-    	</property>
-    	<property name="fixUpTask" ref ="fixUpTasks2" />
-    	<property name="handyWorker" ref ="handyWorker1" />
-  </bean>
+		<property name="moment" value="03/09/2018 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="4.8" />
+		<property name="comments">
+			<list>
+				<value>comment3</value>
+				<value>comment4"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks2" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+
+	<bean id="application3" class="domain.Application">
+		<property name="moment" value="03/12/2014 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="123" />
+		<property name="comments">
+			<list>
+				<value>comment5</value>
+				<value>comment6"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks3" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+
+	<bean id="application4" class="domain.Application">
+		<property name="moment" value="12/11/2001 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="54" />
+		<property name="comments">
+			<list>
+				<value>comment7</value>
+				<value>comment8"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks3" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+
+	<bean id="application5" class="domain.Application">
+		<property name="moment" value="12/11/1995 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="123" />
+		<property name="comments">
+			<list>
+				<value>comment9</value>
+				<value>comment10"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks4" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+
+	<bean id="application6" class="domain.Application">
+		<property name="moment" value="12/11/2000 14:25" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="26" />
+		<property name="comments">
+			<list>
+				<value>comment11</value>
+				<value>comment12"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks4" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+
+	<bean id="application7" class="domain.Application">
+		<property name="moment" value="01/07/2013 14:25" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="123" />
+		<property name="comments">
+			<list>
+				<value>comment13</value>
+				<value>comment14"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks4" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
 	<!-- END OF APPLICATION -->
 
 	<!-- REPORT -->
@@ -491,7 +829,7 @@
 
 	</bean>
 	<bean id="referee2" class="domain.Referee">
-		
+
 		<property name="name" value="refeero" />
 		<property name="middleName" value="" />
 		<property name="surname" value="Gilo" />
@@ -557,9 +895,9 @@
 			</list>
 		</property>
 	</bean>
-	<!--  ADMIN -->
+	<!-- ADMIN -->
 
-	<!--  HANDY WORKER -->
+	<!-- HANDY WORKER -->
 	<bean id="handyWorker1" class="domain.HandyWorker">
 		<property name="name" value="Pepe" />
 		<property name="middleName" value="Luis" />
@@ -602,9 +940,9 @@
 		</property>
 		<property name="curriculum" ref="curriculum1" />
 	</bean>
-	<!--  END OF HANDY WORKER -->
+	<!-- END OF HANDY WORKER -->
 
-	<!-- ENDORSMENT  -->
+	<!-- ENDORSMENT -->
 	<bean id="endorsment1" class="domain.Endorsment">
 		<property name="moment" value="09/11/2018 12:30" />
 		<property name="comments">
@@ -616,7 +954,7 @@
 		<property name="writtenBy" ref="customer1" />
 		<property name="writtenTo" ref="handyWorker1" />
 	</bean>
-	
+
 	<bean id="endorsment2" class="domain.Endorsment">
 		<property name="moment" value="09/08/2018 12:30" />
 		<property name="comments">
@@ -627,37 +965,37 @@
 		<property name="writtenBy" ref="customer1" />
 		<property name="writtenTo" ref="handyWorker1" />
 	</bean>
-	<!-- END OF ENDORSMENT  -->
+	<!-- END OF ENDORSMENT -->
 
-	<!--  CURRICULUM -->
+	<!-- CURRICULUM -->
 	<bean id="curriculum1" class="domain.Curriculum">
-		<property name="ticker" value="ticker_example"/>
+		<property name="ticker" value="ticker_example" />
 		<property name="endorserRecords">
 			<list>
-				<ref bean="endorserRecord1"/>
+				<ref bean="endorserRecord1" />
 			</list>
 		</property>
 		<property name="miscellaneousRecords">
 			<list>
-				<ref bean="miscellaneousRecord1"/>
+				<ref bean="miscellaneousRecord1" />
 			</list>
 		</property>
 		<property name="educationRecords">
 			<list>
-				<ref bean="educationRecord1"/>
+				<ref bean="educationRecord1" />
 			</list>
 		</property>
 		<property name="professionalRecords">
 			<list>
-				<ref bean="professionalRecord1"/>
+				<ref bean="professionalRecord1" />
 			</list>
 		</property>
-		<property name="personalRecord" ref="personalRecord1"/>
+		<property name="personalRecord" ref="personalRecord1" />
 	</bean>
-	
-	<!--  END OF CURRICULUM -->
 
-	<!-- EDUCATIONAL RECORD  -->
+	<!-- END OF CURRICULUM -->
+
+	<!-- EDUCATIONAL RECORD -->
 	<bean id="educationRecord1" class="domain.EducationRecord">
 		<property name="title" value="Title of record" />
 		<property name="startDateStudy" value="09/11/2018 12:30" />
@@ -671,9 +1009,9 @@
 			</list>
 		</property>
 	</bean>
-	<!-- END OF EDUCATIONAL RECORD  -->
+	<!-- END OF EDUCATIONAL RECORD -->
 
-	<!-- CUSTOMER  -->
+	<!-- CUSTOMER -->
 	<bean id="customer1" class="domain.Customer">
 		<property name="name" value="Paco" />
 		<property name="middleName" value="Manuel" />
@@ -701,10 +1039,61 @@
 		<property name="fixUpTasks">
 			<list>
 				<ref bean="fixUpTasks1" />
+				<ref bean="fixUpTasks2" />
+				<ref bean="fixUpTasks3" />
+				<ref bean="fixUpTasks4" />
 			</list>
 		</property>
 	</bean>
-	<!-- END OF CUSTOMER  -->
+
+	<bean id="customer2" class="domain.Customer">
+		<property name="name" value="Juan" />
+		<property name="middleName" value="David" />
+		<property name="surname" value="Benito" />
+		<property name="photo" value="https://www.url2.com/example34" />
+		<property name="email" value="juan.david@gmail.com" />
+		<property name="phoneNumber" value="+34746952921" />
+		<property name="address" value="Reina Mercedes" />
+		<property name="score" value="FANTASTIC" />
+		<property name="fixUpTasks">
+			<list>
+				<ref bean="fixUpTasks5" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customer3" class="domain.Customer">
+		<property name="name" value="Dani" />
+		<property name="middleName" value="Mateo" />
+		<property name="surname" value="Benitez" />
+		<property name="photo" value="https://www.url2.com/example55" />
+		<property name="email" value="dani.mateo.benitez@gmail.com" />
+		<property name="phoneNumber" value="+34746952589" />
+		<property name="address" value="Reina Mercedes" />
+		<property name="score" value="FANTASTIC" />
+		<property name="fixUpTasks">
+			<list>
+				<ref bean="fixUpTasks6" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customer4" class="domain.Customer">
+		<property name="name" value="Jose" />
+		<property name="middleName" value="Luis" />
+		<property name="surname" value="Martin" />
+		<property name="photo" value="https://www.url2.com/example66" />
+		<property name="email" value="Jose.luis.martin@gmail.com" />
+		<property name="phoneNumber" value="+34746989159" />
+		<property name="address" value="Reina Mercedes" />
+		<property name="score" value="FANTASTIC" />
+		<property name="fixUpTasks">
+			<list>
+				<ref bean="fixUpTasks7" />
+			</list>
+		</property>
+	</bean>
+	<!-- END OF CUSTOMER -->
 
 	<!-- ENDORSER RECORD -->
 	<bean id="endorserRecord1" class="domain.EndorserRecord">
@@ -986,7 +1375,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean class="domain.Message" id="message3">
 		<property value="12/11/2011 11:11" name="moment" />
 		<property value="This is a sent message by Admin1" name="subject" />
@@ -1013,9 +1402,7 @@
 	<bean class="domain.Message" id="message4">
 		<property value="02/09/2013 11:11" name="moment" />
 		<property value="This is a Spam message" name="subject" />
-		<property
-			value="Banana Banana Banana Banana "
-			name="body" />
+		<property value="Banana Banana Banana Banana " name="body" />
 		<property value="LOW" name="priority" />
 		<property name="tags">
 			<list>
@@ -1033,7 +1420,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean class="domain.Message" id="message5">
 		<property value="07/05/2018 11:11" name="moment" />
 		<property value="This is a disposable message" name="subject" />
