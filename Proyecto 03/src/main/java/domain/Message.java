@@ -90,7 +90,7 @@ public class Message extends DomainEntity {
 		this.sender = sender;
 	}
 
-	@NotBlank
+	@NotNull
 	@ManyToMany
 	public List<Actor> getReceivers() {
 		return this.receivers;

@@ -115,7 +115,7 @@ public class CurriculumJsonExample {
 		professionalRecord1.setNameCompany("Acme");
 		professionalRecord1.setRole("carrier");
 		professionalRecord1.setStartDate(d2);
-		professionalRecord1.setUrl("https://www.url1.com");
+		professionalRecord1.setLinkAttachment("https://www.url1.com");
 		professionalRecord1.setVersion(1);
 		professionalRecords.add(professionalRecord1);
 
@@ -125,7 +125,7 @@ public class CurriculumJsonExample {
 		professionalRecord2.setNameCompany("Love Muffin");
 		professionalRecord2.setRole("baker");
 		professionalRecord2.setStartDate(d4);
-		professionalRecord2.setUrl("https://www.url2.com");
+		professionalRecord2.setLinkAttachment("https://www.url2.com");
 		professionalRecord2.setVersion(2);
 		professionalRecords.add(professionalRecord2);
 
@@ -190,14 +190,14 @@ public class CurriculumJsonExample {
 
 		miscellaneousRecord1.setComments(comments);
 		miscellaneousRecord1.setId(5);
-		miscellaneousRecord1.setLinkAttachement("http://www.linkAttachement1.com");
+		miscellaneousRecord1.setLinkAttachment("http://www.linkAttachment1.com");
 		miscellaneousRecord1.setTitle("title1");
 		miscellaneousRecord1.setVersion(3);
 		miscellaneousRecords.add(miscellaneousRecord1);
 
 		miscellaneousRecord2.setComments(comments);
 		miscellaneousRecord2.setId(6);
-		miscellaneousRecord2.setLinkAttachement("http://www.linkAttachement2.com");
+		miscellaneousRecord2.setLinkAttachment("http://www.linkAttachment2.com");
 		miscellaneousRecord2.setTitle("title2");
 		miscellaneousRecord2.setVersion(4);
 		miscellaneousRecords.add(miscellaneousRecord2);

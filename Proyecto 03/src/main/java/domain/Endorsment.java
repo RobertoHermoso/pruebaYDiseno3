@@ -3,7 +3,6 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -43,7 +42,7 @@ public class Endorsment extends DomainEntity {
 		return this.comments;
 	}
 
-	public void setComments(final Set<String> comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
 

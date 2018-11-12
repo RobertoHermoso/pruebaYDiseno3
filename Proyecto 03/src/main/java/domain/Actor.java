@@ -94,7 +94,7 @@ public class Actor extends DomainEntity {
 
 	@NotBlank
 	@Email
-	@Column(unique = true)
+	//@Column(unique = true)
 	public String getEmail() {
 		return this.email;
 	}

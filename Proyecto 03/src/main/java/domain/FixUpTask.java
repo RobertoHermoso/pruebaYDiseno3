@@ -7,10 +7,9 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -32,7 +31,7 @@ public class FixUpTask extends DomainEntity {
 	private double					maxPrice;
 	private int						realizationTime;
 
-	private Application				application;
+	private Collection<Application>	applications;
 	private Collection<Category>	categories;
 	private Collection<Phase>		phases;
 	private Collection<Warranty>	warranties;
@@ -41,7 +40,7 @@ public class FixUpTask extends DomainEntity {
 
 	@NotBlank
 	@Pattern(regexp = "[0-9]{2}[0-1]{1}[0-2]{1}[0-9]{2}(_[A-Za-z0-9]{6})")
-	@Column(unique = true)
+	//@Column(unique = true)
 	public String getTicker() {
 		return this.ticker;
 	}
@@ -99,17 +98,17 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@NotNull
-	@OneToOne(optional = false)
-	public Application getApplication() {
-		return this.application;
+	@OneToMany(mappedBy = "fixUpTask")
+	public Collection<Application> getApplications() {
+		return this.applications;
 	}
 
-	public void setApplication(final Application application) {
-		this.application = application;
+	public void setApplications(final Collection<Application> applications) {
+		this.applications = applications;
 	}
 
-	@NotBlank
-	@OneToMany
+	@NotNull
+	@ManyToMany
 	public Collection<Category> getCategories() {
 		return this.categories;
 	}
@@ -128,7 +127,7 @@ public class FixUpTask extends DomainEntity {
 		this.phases = phases;
 	}
 
-	@NotBlank
+	@NotNull
 	@OneToMany
 	public Collection<Warranty> getWarranties() {
 		return this.warranties;

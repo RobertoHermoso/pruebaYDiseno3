@@ -25,7 +25,7 @@ public class ProfessionalRecord extends DomainEntity {
 	private Date			startDate;
 	private Date			endDate;
 	private String			role;
-	private String			url;
+	private String			linkAttachment;
 	private List<String>	comments;
 
 
@@ -73,12 +73,12 @@ public class ProfessionalRecord extends DomainEntity {
 	}
 
 	@URL
-	public String getUrl() {
-		return this.url;
+	public String getLinkAttachment() {
+		return this.linkAttachment;
 	}
 
-	public void setUrl(final String url) {
-		this.url = url;
+	public void setLinkAttachment(final String linkAttachment) {
+		this.linkAttachment = linkAttachment;
 	}
 
 	@Valid
