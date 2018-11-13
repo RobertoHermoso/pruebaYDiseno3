@@ -19,6 +19,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class HandyWorker extends Endorser {
 
 	private String				make;
+
 	private List<Application>	applications;
 	private Collection<Finder>	finders;
 	private List<Tutorial>		tutorials;

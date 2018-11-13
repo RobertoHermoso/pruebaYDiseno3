@@ -183,7 +183,7 @@
 			<list>
 				<ref bean="application5" />
 				<ref bean="application6" />
-				<ref bean="application7" />
+			
 			</list>
 		</property>
 		<property name="categories">
@@ -220,7 +220,7 @@
 
 		<property name="applications">
 			<list>
-				<ref bean="application3" />
+				<ref bean="application7" />
 			</list>
 		</property>
 		<property name="categories">
@@ -256,7 +256,7 @@
 
 		<property name="applications">
 			<list>
-				<ref bean="application4" />
+				<ref bean="application8" />
 			</list>
 		</property>
 		<property name="categories">
@@ -292,7 +292,7 @@
 
 		<property name="applications">
 			<list>
-				<ref bean="application7" />
+				<ref bean="application9" />
 			</list>
 		</property>
 		<property name="categories">
@@ -737,7 +737,7 @@
 			</list>
 		</property>
 		<property name="fixUpTask" ref="fixUpTasks2" />
-		<property name="handyWorker" ref="handyWorker1" />
+		<property name="handyWorker" ref="handyWorker2" />
 	</bean>
 
 	<bean id="application3" class="domain.Application">
@@ -751,7 +751,7 @@
 			</list>
 		</property>
 		<property name="fixUpTask" ref="fixUpTasks3" />
-		<property name="handyWorker" ref="handyWorker1" />
+		<property name="handyWorker" ref="handyWorker2" />
 	</bean>
 
 	<bean id="application4" class="domain.Application">
@@ -765,7 +765,7 @@
 			</list>
 		</property>
 		<property name="fixUpTask" ref="fixUpTasks3" />
-		<property name="handyWorker" ref="handyWorker1" />
+		<property name="handyWorker" ref="handyWorker3" />
 	</bean>
 
 	<bean id="application5" class="domain.Application">
@@ -779,7 +779,7 @@
 			</list>
 		</property>
 		<property name="fixUpTask" ref="fixUpTasks4" />
-		<property name="handyWorker" ref="handyWorker1" />
+		<property name="handyWorker" ref="handyWorker4" />
 	</bean>
 
 	<bean id="application6" class="domain.Application">
@@ -792,13 +792,13 @@
 				<value>comment12"</value>
 			</list>
 		</property>
-		<property name="fixUpTask" ref="fixUpTasks4" />
-		<property name="handyWorker" ref="handyWorker1" />
+		<property name="fixUpTask" ref="fixUpTasks5" />
+		<property name="handyWorker" ref="handyWorker4" />
 	</bean>
 
 	<bean id="application7" class="domain.Application">
 		<property name="moment" value="01/07/2013 14:25" />
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="REJECTED" />
 		<property name="offeredPrice" value="123" />
 		<property name="comments">
 			<list>
@@ -806,9 +806,38 @@
 				<value>comment14"</value>
 			</list>
 		</property>
-		<property name="fixUpTask" ref="fixUpTasks4" />
+		<property name="fixUpTask" ref="fixUpTasks6" />
 		<property name="handyWorker" ref="handyWorker1" />
 	</bean>
+	
+	<bean id="application8" class="domain.Application">
+		<property name="moment" value="03/09/2018 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="4.8" />
+		<property name="comments">
+			<list>
+				<value>comment3</value>
+				<value>comment4"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks7" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+	
+	<bean id="application9" class="domain.Application">
+		<property name="moment" value="03/09/2018 11:30" />
+		<property name="status" value="ACCEPTED" />
+		<property name="offeredPrice" value="4.8" />
+		<property name="comments">
+			<list>
+				<value>comment3</value>
+				<value>comment4"</value>
+			</list>
+		</property>
+		<property name="fixUpTask" ref="fixUpTasks2" />
+		<property name="handyWorker" ref="handyWorker1" />
+	</bean>
+	
 	<!-- END OF APPLICATION -->
 
 	<!-- REPORT -->
@@ -1039,6 +1068,11 @@
 		<property name="applications">
 			<list>
 				<ref bean="application1" />
+				<ref bean="application5" />
+				<ref bean="application6" />
+				<ref bean="application7" />
+				<ref bean="application8" />
+				<ref bean="application9" />
 			</list>
 		</property>
 		<property name="finders">
@@ -1053,6 +1087,62 @@
 		</property>
 		<property name="curriculum" ref="curriculum1" />
 	</bean>
+	
+	
+	
+	<bean id="handyWorker2" class="domain.HandyWorker">
+		<property name="name" value="Pepe2" />
+		<property name="middleName" value="Luis2" />
+		<property name="surname" value="Martinez2" />
+		<property name="photo" value="https://www.url.com/example2" />
+		<property name="email" value="pepe.luis2@gmail.com" />
+		<property name="phoneNumber" value="+34622256914" />
+		<property name="address" value="Sevilla" />
+		<property name="score" value="GOOD" />
+		<property name="make" value="Pepe Luis Martinez" />
+		<property name="applications">
+			<list>
+				<ref bean="application2" />
+			</list>
+		</property>
+	</bean>
+		
+	<bean id="handyWorker3" class="domain.HandyWorker">
+		<property name="name" value="Pepe3" />
+		<property name="middleName" value="Luis3" />
+		<property name="surname" value="Martinez3" />
+		<property name="photo" value="https://www.url.com/example2" />
+		<property name="email" value="pepe.luis2@gmail.com" />
+		<property name="phoneNumber" value="+34633256914" />
+		<property name="address" value="Sevilla" />
+		<property name="score" value="GOOD" />
+		<property name="make" value="Pepe Luis Martinez" />
+		<property name="applications">
+			<list>
+				<ref bean="application3" />
+				<ref bean="application4" />
+			</list>
+		</property>
+	</bean>	
+	
+	<bean id="handyWorker4" class="domain.HandyWorker">
+		<property name="name" value="Pepe4" />
+		<property name="middleName" value="Luis4" />
+		<property name="surname" value="Martinez4" />
+		<property name="photo" value="https://www.url.com/example2" />
+		<property name="email" value="pepe.luis2@gmail.com" />
+		<property name="phoneNumber" value="+34644456914" />
+		<property name="address" value="Sevilla" />
+		<property name="score" value="GOOD" />
+		<property name="make" value="Pepe Luis Martinez" />
+		<property name="applications">
+			<list>
+				<ref bean="application5" />
+				<ref bean="application6" />
+			</list>
+		</property>
+	</bean>	
+		
 	<!-- END OF HANDY WORKER -->
 
 	<!-- ENDORSMENT -->

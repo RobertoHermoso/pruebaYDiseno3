@@ -23,7 +23,6 @@ public class Application extends DomainEntity {
 
 	private Date				moment;
 
-	@Enumerated(EnumType.STRING)
 	private Status				status;
 	private double				offeredPrice;
 	private Collection<String>	comments;
@@ -53,6 +52,7 @@ public class Application extends DomainEntity {
 	}
 
 	@NotNull
+	@Enumerated(EnumType.STRING)
 	public Status getStatus() {
 		return this.status;
 	}
